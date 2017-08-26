@@ -1,0 +1,44 @@
+#bar{
+  height: 500px;
+  width: 40%;
+  background-color: #c4c5d0;
+  margin: 50px auto;
+}
+
+#barra{
+  height: 100%;
+  width: 20%;
+  background-color: #f0cecb;
+  float: right;
+}
+
+#barman{
+  height: 15%;
+  width: 15%;
+  background-color: #8294f2;
+  float: right;
+  margin-right: 10px;
+  position: relative;
+  top: 0;
+}
+
+.table{
+  height: 15%;
+  width: 60%;
+  background-color: red;
+}
+
+#table1{
+  position: relative;
+  top: 15%;
+}
+
+#table2{
+  position: relative;
+  top: 30%;
+}
+
+#table3{
+  position: relative;
+  top: 45%;
+}

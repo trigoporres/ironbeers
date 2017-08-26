@@ -10,9 +10,9 @@ Barman.prototype.movUp = function () {
   //console.log(this.positionY);
 
   if (this.positionY > 0) {
-    this.positionY -= 5;
+    this.positionY -= 15;
   }
-  console.log(this.positionY);
+  //console.log(this.positionY);
   $('#barman').css('top', this.positionY + 'px');
 
 };
@@ -22,10 +22,10 @@ Barman.prototype.movDown = function () {
   this.positionY = parseInt($('#barman').css('top'));
   //console.log(this.positionY);
 
-  if (this.positionY < 425) {
-    this.positionY += 5;
+  if (this.positionY < 410) {
+    this.positionY += 15;
   }
-  console.log(this.positionY);
+  //console.log(this.positionY);
   $('#barman').css('top', this.positionY + 'px');
 
 };

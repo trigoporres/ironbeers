@@ -1,6 +1,7 @@
-//declaramos constructor
-var barman = new Barman();
-var keys = {};
+
+var barman = new Barman(); //crea camarero
+var client = new Client(); //crea cliente
+var keys = {}; //inicializa teclas
 
 $(document).ready(function (){
     //console.log(barman.movUp());
@@ -16,11 +17,12 @@ $(document).ready(function (){
     //intervalo que permita el movimiento
     setInterval(function (){
       //console.log("hola");
-      if (keys[81]) {
+      if (keys[38]) {
         barman.movUp();
+        ramdomClient ();
       //console.log("me pulsas");
       }
-       else if(keys[65]) {
+       else if(keys[40]) {
          barman.movDown();
        }
 

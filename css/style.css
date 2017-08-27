@@ -43,32 +43,25 @@
   top: 45%;
 }
 
-.client1{
+.client{
   height: 15%;
   width: 15%;
   background-color: #0c32f6;
   float: left;
   position: relative;
+}
+
+.client1{
   top: 0;
   visibility: hidden;
 }
 
 .client2{
-  height: 15%;
-  width: 15%;
-  background-color: #0c32f6;
-  float: left;
-  position: relative;
   top: 15%;
   visibility: hidden;
 }
 
 .client3{
-  height: 15%;
-  width: 15%;
-  background-color: #0c32f6;
-  float: left;
-  position: relative;
   top: 30%;
   visibility: hidden;
 }

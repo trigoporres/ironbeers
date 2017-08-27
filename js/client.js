@@ -1,13 +1,16 @@
 function Client() {
   this.position = [];
   this.size = 75;
-  this.wait = 3000;
-  this.drink = true;
+  this.arrival = 3000;
+  this.wait = 0;
+  this.timeDrink = 0;
+  //this.drink = true;
 }
 
-function ramdomClient (){
-  var file = Math.floor((Math.random() * 3) + 1);
+Client.prototype.ramdomClient = function(){
+  var file = Math.floor((Math.random() * 3));
   console.log(file);
+
   if (file == 1){
     $('.client1').css('visibility', 'visible');
   }else if (file == 2){
@@ -16,7 +19,7 @@ function ramdomClient (){
   else{
     $('.client3').css('visibility', 'visible');
   }
-}
+};
 
 Client.prototype.push = function (){
 

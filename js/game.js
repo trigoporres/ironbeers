@@ -16,10 +16,11 @@ $(document).ready(function (){
 
     //intervalo que permita el movimiento
     setInterval(function (){
+
       //console.log("hola");
       if (keys[38]) {
         barman.movUp();
-        ramdomClient ();
+        client.ramdomClient ();
       //console.log("me pulsas");
       }
        else if(keys[40]) {

@@ -1,6 +1,5 @@
 
 var barman = new Barman(); //crea camarero
-var client = new Client(); //crea cliente
 var keys = {}; //inicializa teclas
 var contador =0;
 
@@ -27,10 +26,13 @@ $(document).ready(function (){
        else if(keys[40]) {
          barman.movDown();
        }
-       var contador = new Client();
+       var top = Math.floor((Math.random() * 5));
+       var left = Math.floor((Math.random() * 5 ));
+       var array= [top,left];
+       var contador = new Client(array);
+       contador.push();
 
-
-    },100);
+    },1000);
 
 
 

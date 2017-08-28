@@ -1,33 +1,34 @@
-function Barman (y){
-  this.positionY = 0;
+function Barman (){
+  this.positionY = ['0', '75', '150', '225', '300', '375'];
   this.size = 75;
   this.service = true;
 }
 
-Barman.prototype.movUp = function () {
+Barman.prototype.movUp = function (){
+  var up = 0;
+  this.positionYini = parseInt($('#barman').css('top'));
 
-  this.positionY = parseInt($('#barman').css('top'));
-  //console.log(this.positionY);
+    for (var i = 0; i < this.positionY.length; i++) {
+      if (this.positionY[i] > 0 && this.positionYini == this.positionY[i]) {
+        up = this.positionY[i-1];
+      }
+    }
 
-  if (this.positionY > 0) {
-    this.positionY -= 15;
-  }
-  //console.log(this.positionY);
-  $('#barman').css('top', this.positionY + 'px');
+  $('#barman').css('top', up + 'px');
 
 };
 
-Barman.prototype.movDown = function () {
+Barman.prototype.movDown = function (){
+  var down = 0;
+  this.positionYini = parseInt($('#barman').css('top'));
 
-  this.positionY = parseInt($('#barman').css('top'));
-  //console.log(this.positionY);
+    for (var i = 0; i < this.positionY.length; i++) {
+      if (this.positionY[i] < 410 && this.positionYini == this.positionY[i]) {
+        down = this.positionY[i+1];
+      }
+    }
 
-  if (this.positionY < 410) {
-    this.positionY += 15;
-  }
-  //console.log(this.positionY);
-  $('#barman').css('top', this.positionY + 'px');
-
+  $('#barman').css('top', down + 'px');
 };
 
 Barman.prototype.takeB = function () {

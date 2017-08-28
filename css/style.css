@@ -46,9 +46,10 @@
 .client{
   height: 15%;
   width: 15%;
-  background-color: #0c32f6;
+  /*border:1px solid #0c32f6;*/
   float: left;
   position: relative;
+  color: green;
 }
 
 .client1{

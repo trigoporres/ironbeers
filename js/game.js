@@ -2,6 +2,7 @@
 var barman = new Barman(); //crea camarero
 var client = new Client(); //crea cliente
 var keys = {}; //inicializa teclas
+var contador =0;
 
 $(document).ready(function (){
 
@@ -12,7 +13,7 @@ $(document).ready(function (){
       }).keyup(function(e){
       delete keys[e.keyCode];
     });
-    client.push();
+
 
     //intervalo que permita el movimiento
     setInterval(function (){
@@ -26,10 +27,10 @@ $(document).ready(function (){
        else if(keys[40]) {
          barman.movDown();
        }
+       var contador = new Client();
 
 
-
-    },30);
+    },100);
 
 
 

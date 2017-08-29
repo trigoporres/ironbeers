@@ -13,11 +13,10 @@ Client.prototype.ramdomClient = function(){
 
 Client.prototype.push = function (){
   var that = this;
-  var file = this.ramdomClient();
-  setInterval(function(){
+  //setInterval(function(){
     var file = that.ramdomClient();
-    $(that.position[file]).addClass("visi");
-  },3000);
+    $(that.position[file]).css("visibility", "visible");
+  //},3000);
 };
 Client.prototype.exit = function (){
 

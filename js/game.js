@@ -1,6 +1,7 @@
 
 var barman = new Barman();
 var client = new Client();
+var beer = new Beer();
 var keys = {};
 
 $(document).ready(function (){
@@ -11,6 +12,7 @@ $(document).ready(function (){
   });
 
   client.push();
+  beer.push();
 
   setInterval(function (){
     if (keys[38]) {
@@ -19,5 +21,10 @@ $(document).ready(function (){
      else if(keys[40]) {
        barman.movDown();
      }
-   },30);
+     else if (keys[39]) {
+       barman.collect();
+     }
+   },50);
 });
+
+create();

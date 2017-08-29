@@ -28,9 +28,22 @@ $(document).ready(function (){
        }
        var top = Math.floor((Math.random() * 5));
        var left = Math.floor((Math.random() * 5 ));
-       var array= [top,left];
-       var contador = new Client(array);
-       contador.push();
+       var position= [top,left];
+
+       var client = new Client(position);
+       var devuelve = client.push();
+
+       var arrayClient = [];
+       arrayClient.push(devuelve);
+
+       console.log(arrayClient);
+
+       setTimeout(function(){
+
+         arrayClient.shift();
+         console.log(arrayClient);
+
+       },5000);
 
     },1000);
 

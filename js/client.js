@@ -1,5 +1,5 @@
 function Client(position) {
-  
+
   this.client = {
     row: position[0],
     col: position[1],
@@ -18,6 +18,9 @@ Client.prototype.push = function (){
 
   if (this.client.row % 2 === 0) {
     console.log(this.client);
+    this.llegada = true;
+    return this.client;
+
   }
 };
 

@@ -1,7 +1,7 @@
 function Barman (){
   this.positionY = 0;
   this.size = 75;
-  this.service = true;
+  this.service = false;
 }
 
 Barman.prototype.movUp = function () {
@@ -21,8 +21,10 @@ Barman.prototype.movDown = function () {
 };
 
 Barman.prototype.collect = function (){
-  if (this.positionY == positionBeer && apto == true) {
-    $(cerveza).css("visibility", "hidden");
-    $('#barman img').css("visibility", "visible");
-  }
+  
+};
+
+Barman.prototype.throw = function (){
+
+
 };

@@ -24,6 +24,9 @@ $(document).ready(function (){
      else if (keys[39]) {
        barman.collect();
      }
+     else if (keys[37]) {
+       barman.throw();
+     }
    },50);
 });
 

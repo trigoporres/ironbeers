@@ -1,19 +1,19 @@
 function create (){
    $(".container").append("<div id='bar'></div>");
    $("#bar").append("<div id='barra'></div>");
-   $("#barra").append("<div id='beer1' class='beer'></div>");
-   $("#barra").append("<div id='beer2' class='beer'></div>");
-   $("#barra").append("<div id='beer3' class='beer'></div>");
-
-   $("#beer1").append("<img src='./descarga.jpg'>");
-
-   $("#beer2").append("<img src='./descarga.jpg'>");
-
-   $("#beer3").append("<img src='./descarga.jpg'>");
+  //  $("#barra").append("<div id='beer1' class='beer'></div>");
+  //  $("#barra").append("<div id='beer2' class='beer'></div>");
+  //  $("#barra").append("<div id='beer3' class='beer'></div>");
+   //
+  //  $("#beer1").append("<img src='./descarga.jpg'>");
+   //
+  //  $("#beer2").append("<img src='./descarga.jpg'>");
+   //
+  //  $("#beer3").append("<img src='./descarga.jpg'>");
 
 
    $("#bar").append("<div id='barman'></div>");
-   $("#barman").append("<img src='./descarga.jpg'>");
+
 
    $("#bar").append("<div class='uno client'></div>");
    $("#bar").append("<div class='dos client'></div>");

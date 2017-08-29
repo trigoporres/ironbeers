@@ -2,7 +2,7 @@
   height: 450px;
   width: 450px;
   background-color: #c4c5d0;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
 #barra{
@@ -15,7 +15,7 @@
 .beer{
   height: 75px;
   width: 75px;
-  background-color: green;
+  /*background-color: green;*/
   /*border-radius: 50%;*/
 }
 
@@ -26,19 +26,19 @@
 #beer1{
   position: absolute;
   top: 75px;
-  visibility: hidden;
+  visibility: visible;
 }
 
 #beer2{
   position: absolute;
   top: 225px;
-  visibility: hidden;
+  visibility: visible;
 }
 
 #beer3{
   position: absolute;
   top: 375px;
-  visibility: hidden;
+  visibility: visible;
 }
 
 #barman{
@@ -51,38 +51,41 @@
   top: 0;
 }
 
-#barman img{
-  width: 72px;
-  visibility: hidden;
-}
+
 
 .table{
-  height: 16.6666%;
-  width: 66.6666%;
+  height: 75px;
+  width: 300px;
   background-color: red;
 }
 
 #table1{
-  position: relative;
-  top: 16.6666%;
+  position: absolute;
+  top: 75px;
+}
+
+#table1 img{
+  width: 75px;
+  float: right;
+  visibility: hidden;
 }
 
 #table2{
-  position: relative;
-  top: 33.333%;
+  position: absolute;
+  top: 225px;
 }
 
 #table3{
-  position: relative;
-  top: 49.999%;
+  position: absolute;
+  top: 375px;
 }
 
 .client{
-  height: 16.6666%;
-  width: 16.6666%;
+  height: 75px;
+  width: 75px;
   background-color: #0c32f6;
   float: left;
-  position: relative;
+  position: absolute;
 }
 
 .uno, .dos, .tres, .cuatro{
@@ -91,13 +94,25 @@
 }
 
 .cinco, .seis, .siete, .ocho{
-  top: 16.6666%;
+  top: 150px;
   visibility: hidden;
 }
 
 .nueve, .diez, .once, .doce{
-  top: 33.333%;
+  top: 300px;
   visibility: hidden;
+}
+
+.dos, .seis, .diez{
+  left: 75px;
+}
+
+.tres, .siete, .once{
+  left: 150px;
+}
+
+.cuatro, .ocho, .doce{
+  left: 225px;
 }
 
 .visi{

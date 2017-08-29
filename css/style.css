@@ -1,51 +1,51 @@
 #bar{
-  height: 500px;
-  width: 40%;
+  height: 450px;
+  width: 450px;
   background-color: #c4c5d0;
-  margin: 50px auto;
+  /**margin: 50px auto;**/
 }
 
 #barra{
   height: 100%;
-  width: 20%;
+  width: 16.6666%;
   background-color: #f0cecb;
   float: right;
 }
 
 #barman{
-  height: 15%;
-  width: 15%;
+  height: 16.6666%;
+  width: 16.6666%;
   background-color: #8294f2;
   float: right;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
   position: relative;
   top: 0;
 }
 
 .table{
-  height: 15%;
-  width: 60%;
+  height: 16.6666%;
+  width: 66.6666%;
   background-color: red;
 }
 
 #table1{
   position: relative;
-  top: 15%;
+  top: 16.6666%;
 }
 
 #table2{
   position: relative;
-  top: 30%;
+  top: 33.333%;
 }
 
 #table3{
   position: relative;
-  top: 45%;
+  top: 49.999%;
 }
 
 .client{
-  height: 15%;
-  width: 15%;
+  height: 16.6666%;
+  width: 16.6666%;
   background-color: #0c32f6;
   float: left;
   position: relative;
@@ -57,12 +57,12 @@
 }
 
 .client2{
-  top: 15%;
+  top: 16.6666%;
   visibility: hidden;
 }
 
 .client3{
-  top: 30%;
+  top: 49.999%;
   visibility: hidden;
 }
 

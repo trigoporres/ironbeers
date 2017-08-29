@@ -22,7 +22,7 @@ Barman.prototype.movDown = function () {
   this.positionY = parseInt($('#barman').css('top'));
   //console.log(this.positionY);
 
-  if (this.positionY < 410) {
+  if (this.positionY < 375) {
     this.positionY += 15;
   }
   //console.log(this.positionY);

@@ -5,28 +5,20 @@ function Client() {
   this.arrival = 3000;
   this.wait = 0;
   this.timeDrink = 0;
-  //this.drink = true;
 }
 
 Client.prototype.ramdomClient = function(){
-
   return Math.floor((Math.random() * 12));
-
 };
 
 Client.prototype.push = function (){
-
   var that = this;
   var file = this.ramdomClient();
-
   setInterval(function(){
     var file = that.ramdomClient();
-
     $(that.position[file]).addClass("visi");
   },3000);
-
 };
-
 Client.prototype.exit = function (){
 
 };

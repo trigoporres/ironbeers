@@ -6,25 +6,22 @@ function Beer() {
   this.file = 0;
 }
 
-Beer.prototype.ramdomBeer = function(){
-  return Math.floor((Math.random() * 3));
-};
+// Beer.prototype.ramdomBeer = function(){
+//   return Math.floor((Math.random() * 3));
+// };
 
 Beer.prototype.push = function (){
   var that = this;
-  setInterval(function(){
+  setTimeout(function(){
 
-    that.file = that.ramdomBeer();
+    for (var i = 0; i < that.y.length; i++) {
+      $("#barra").append("<div id= beer"+i+"  class='beer'></div>");
 
-      $("#beer"+that.file).remove();
+      $("#beer"+i).append("<img   src='./descarga.jpg'>");
+    }
 
-      $("#barra").append("<div id= beer"+that.file+"  class='beer'></div>");
+    that.positionBeer = parseInt($("#beer"+this.file).css('top'));
+    that.x = parseInt($("#beer"+this.file).css('left'));
 
-      $("#beer"+that.file).append("<img   src='./descarga.jpg'>");
-
-
-    that.positionBeer = parseInt($("#beer"+that.file).css('top'));
-    that.x = parseInt($("#beer"+that.file).css('left'));
-
- },3000);
+  },1000);
 };

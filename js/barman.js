@@ -5,7 +5,7 @@ function Barman (){
 }
 
 Barman.prototype.movUp = function () {
-  this.positionY = parseInt($('#barman').css('top'));
+  this.y = parseInt($('#barman').css('top'));
   if (this.y > 0) {
     this.y -= 75;
   }
@@ -13,7 +13,7 @@ Barman.prototype.movUp = function () {
 };
 
 Barman.prototype.movDown = function () {
-  this.positionY = parseInt($('#barman').css('top'));
+  this.y = parseInt($('#barman').css('top'));
   if (this.y < 375) {
     this.y += 75;
   }

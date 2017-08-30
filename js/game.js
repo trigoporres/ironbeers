@@ -21,27 +21,16 @@ $(document).ready(function (){
     }
     if(keys[40]) {
        barman.movDown();
-       beer.newPosition(barman);
      }
      if (keys[39]) {
 
-       collect();
+
      }
      if (keys[37]) {
-       barman.throw();
+
      }
    },100);
 
    create();
 
-   function collect(){
-     if (beer.positionBeer === barman.y) {
-       console.log("hola");
-       console.log(beer.positionBeer);
-       console.log(barman.y);
-       beer.x = beer.x -75;
-       $("#beer"+beer.file).css('left', beer.x);
-     }
-
-   }
 });

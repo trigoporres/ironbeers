@@ -18,13 +18,22 @@ $(document).ready(function (){
   setInterval(function (){
     if (keys[38]) {
       barman.movUp();
+      beer.movUp(barman);
     }
     if(keys[40]) {
        barman.movDown();
+       beer.movDown(barman);
      }
      if (keys[39]) {
-
-
+       barman.collect(beer);
+      //  if (keys[38]) {
+      //    barman.movUp();
+      //    beer.movUp(barman);
+      //  }
+      //  if(keys[40]) {
+      //    barman.movDown();
+      //    beer.movDown(barman);
+      //   }
      }
      if (keys[37]) {
 

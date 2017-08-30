@@ -20,8 +20,31 @@ Beer.prototype.push = function (){
       $("#beer"+i).append("<img   src='./descarga.jpg'>");
     }
 
-    that.positionBeer = parseInt($("#beer"+this.file).css('top'));
-    that.x = parseInt($("#beer"+this.file).css('left'));
+    that.positionBeer = parseInt($("#beer"+that.file).css('top'));
+    that.x = parseInt($("#beer"+that.file).css('left'));
+
 
   },1000);
+};
+
+
+Beer.prototype.movUp = function (a) {
+  for (var i = 0; i < this.y.length; i++) {
+    var top = $("#beer"+this.y[i]).css('top');
+    if (top == a.y) {
+      var beerTop = top -75;
+      parseInt($("#beer"+this.y[i]).css('top', beerTop));
+    }
+  }
+};
+
+Beer.prototype.movDown = function (a) {
+  for (var i = 0; i < this.y.length; i++) {
+    var down = $("#beer"+this.y[i]).css('top');
+    if (down == a.y){
+
+      var beerDown = down +75;
+      parseInt($("#beer"+this.y[i]).css('top', beerDown));
+    }
+  }
 };

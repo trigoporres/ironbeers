@@ -21,7 +21,11 @@ Barman.prototype.movDown = function () {
 };
 
 Barman.prototype.collect = function (){
-  
+
+  if (this.positionY == cerveza) {
+    console.log(cerveza);
+    console.log("hola");
+  }
 };
 
 Barman.prototype.throw = function (){

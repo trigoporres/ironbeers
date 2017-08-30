@@ -1,8 +1,9 @@
 function Beer() {
-  this.position =
-    ['beer1','beer2', 'beer3'];
+  this.y = [0,1,2];
   this.arrival = 3000;
-  this.count = 3;
+  this.positionBeer = 0;
+  this.x = 0;
+  this.file = 0;
 }
 
 Beer.prototype.ramdomBeer = function(){
@@ -13,20 +14,17 @@ Beer.prototype.push = function (){
   var that = this;
   setInterval(function(){
 
-    var file = that.ramdomBeer();
+    that.file = that.ramdomBeer();
+
+      $("#beer"+that.file).remove();
+
+      $("#barra").append("<div id= beer"+that.file+"  class='beer'></div>");
+
+      $("#beer"+that.file).append("<img   src='./descarga.jpg'>");
 
 
-    if (that.count >0) {
-      $("#" + that.position[file]).remove();
+    that.positionBeer = parseInt($("#beer"+that.file).css('top'));
+    that.x = parseInt($("#beer"+that.file).css('left'));
 
-      $("#barra").append("<div id="+ that.position[file]+"  class='beer'></div>");
-
-      $("#" + that.position[file]).append("<img   src='./descarga.jpg'>");
-
-      that.count --;
-    }
-
-    positionBeer = parseInt($(that.position[file]).css('top'));
-    return that.position[file];
  },3000);
 };

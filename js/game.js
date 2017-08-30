@@ -1,8 +1,4 @@
 
-var barman = new Barman();
-var client = new Client();
-var beer = new Beer();
-var keys = {};
 
 $(document).ready(function (){
   $(document).on('keydown', function(e){
@@ -11,6 +7,11 @@ $(document).ready(function (){
     delete keys[e.keyCode];
   });
 
+  var barman = new Barman();
+  var client = new Client();
+  var beer = new Beer();
+  var keys = {};
+
   client.push();
   beer.push();
 
@@ -18,16 +19,29 @@ $(document).ready(function (){
     if (keys[38]) {
       barman.movUp();
     }
-     else if(keys[40]) {
+    if(keys[40]) {
        barman.movDown();
+       beer.newPosition(barman);
      }
-     else if (keys[39]) {
-       barman.collect();
+     if (keys[39]) {
+
+       collect();
      }
-     else if (keys[37]) {
+     if (keys[37]) {
        barman.throw();
      }
-   },50);
-});
+   },100);
 
-create();
+   create();
+
+   function collect(){
+     if (beer.positionBeer === barman.y) {
+       console.log("hola");
+       console.log(beer.positionBeer);
+       console.log(barman.y);
+       beer.x = beer.x -75;
+       $("#beer"+beer.file).css('left', beer.x);
+     }
+
+   }
+});

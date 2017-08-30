@@ -23,19 +23,19 @@
   width: 72px;
 }
 
-#beer1{
+#beer0{
   position: absolute;
   top: 75px;
   visibility: visible;
 }
 
-#beer2{
+#beer1{
   position: absolute;
   top: 225px;
   visibility: visible;
 }
 
-#beer3{
+#beer2{
   position: absolute;
   top: 375px;
   visibility: visible;

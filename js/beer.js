@@ -1,9 +1,12 @@
 function Beer(position, identifier) {
   this.position = position;
   this.identifier = identifier;
+  this.inProcess = false ;
+
   this.arrival = 3000;
   this.positionBeer = 0;
   this.y = 0;
+  this.x = 0;
   this.file = 0;
 }
 
@@ -18,20 +21,9 @@ Beer.prototype.push = function (){
 
 };
 
-Beer.prototype.update = function(){
+Beer.prototype.update = function(barman){
   $(this.identifier).css({
-    'top': this.y,
+    'top': barman.y,
     'left':this.x
   });
-};
-
-Beer.prototype.movUp = function () {
-  this.y -= 75;
-  this.update();
-};
-
-
-Beer.prototype.movDown = function () {
-  this.y += 75;
-  this.update();
 };

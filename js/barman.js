@@ -1,12 +1,12 @@
 function Barman (){
-  this.position=
   this.y = 0;
   this.size = 75;
   this.service = false;
 }
 
-Barman.prototype.movUp = function () {
+Barman.prototype.movUp = function (beer) {
   this.y = parseInt($('#barman').css('top'));
+
   if (this.y > 0) {
     this.y -= 75;
   }
@@ -14,8 +14,9 @@ Barman.prototype.movUp = function () {
   $('#barman').css('top', this.y + 'px');
 };
 
-Barman.prototype.movDown = function () {
+Barman.prototype.movDown = function (beer) {
   this.y = parseInt($('#barman').css('top'));
+
   if (this.y < 375) {
     this.y += 75;
   }
@@ -44,7 +45,17 @@ Barman.prototype.collect = function (a){
   this.service= true;
 };
 
-Barman.prototype.throw = function (){
+Barman.prototype.throw = function (a){
+  var beerOne = 75;
+  var beerTwo = 225;
+  var beerThree = 375;
 
-
+  //if (this.y == beerOne) {
+      if (a.x >0) {
+        a.x = a.x -10;
+        $("#beer0").css('left', a.x);
+        //console.log(a.x);
+      }
+  //  }
+  this.service= false;
 };

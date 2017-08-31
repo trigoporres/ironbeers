@@ -8,10 +8,22 @@ var count  ;
 
 $(document).ready(function (){
   createHTML();
+
+  function beerCollision(){
+    var impactClient = ($(".beer").collision(".client"));
+    if (impactClient[0]) {
+      $(impactClient).css('visibility', 'hidden');
+      // $(".beer").remove();
+    }
+  }
+
+
   beer0  = new Beer("<div id= 'beer0' class='beer'></div>", "#beer0");
   beer1  = new Beer("<div id= 'beer1' class='beer'></div>", "#beer1");
   beer2  = new Beer("<div id= 'beer2' class='beer'></div>", "#beer2");
   barman = new Barman();
+
+
 
 
   setInterval(function (){
@@ -21,13 +33,19 @@ $(document).ready(function (){
     if (count >= 12) {
       clearInterval();
     }
+    beerCollision();
   },3000);
+
+
 
   nextBeer(beer0);
 
   setInterval(function (){
     checkControls();
+    if (beer0.inProcess == true){barman.throw(beer0);}
+
   },150);
+
 
 });
 
@@ -49,16 +67,18 @@ function generateClient(){
 function checkControls (){
   if (keys[38]) {
     barman.movUp();
-    if ( barman.service == true){beer0.movUp();}
+    if ( barman.service == true){beer0.update(barman);}
   }
   if(keys[40]) {
      barman.movDown();
-     if ( barman.service == true){beer0.movDown();}
+     if ( barman.service == true){beer0.update(barman);}
   }
   if (keys[39]) {
    barman.collect(beer0);
   }
   if (keys[37]) {
+   beer0.inProcess = true;
+
   }
 }
 

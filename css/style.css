@@ -8,14 +8,14 @@
 #barra{
   height: 100%;
   width: 16.6666%;
-  background-color: #f0cecb;
+  background-color: #1d33d7;
   float: right;
 }
 
 .beer{
   height: 75px;
   width: 75px;
-  background-color: green;
+  background-image: url('../descarga.jpg');
   z-index: 1000;
   /*border-radius: 50%;*/
 }

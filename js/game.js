@@ -1,45 +1,66 @@
-
+var keys = {};
+var barman ;
+var client ;
+var beer0  ;
+var beer1  ;
+var beer2  ;
 
 $(document).ready(function (){
-  $(document).on('keydown', function(e){
-    keys[e.keyCode] = true;
-    }).keyup(function(e){
-    delete keys[e.keyCode];
-  });
+  createHTML();
+  beer0  = new Beer("<div id= 'beer0' class='beer'></div>", "#beer0");
+  beer1  = new Beer("<div id= 'beer1' class='beer'></div>", "#beer1");
+  beer2  = new Beer("<div id= 'beer2' class='beer'></div>", "#beer2");
+  barman = new Barman();
 
-  var barman = new Barman();
-  var client = new Client();
-  var beer = new Beer();
-  var keys = {};
 
-  client.push();
-  beer.push();
+  // setInterval(function (){
+  //   generateClient();
+  //   client.drawClient();
+  //
+  // },3000);
+  nextBeer(beer0);
 
   setInterval(function (){
-    if (keys[38]) {
-      barman.movUp();
-      beer.movUp(barman);
-    }
-    if(keys[40]) {
-       barman.movDown();
-       beer.movDown(barman);
-     }
-     if (keys[39]) {
-       barman.collect(beer);
-      //  if (keys[38]) {
-      //    barman.movUp();
-      //    beer.movUp(barman);
-      //  }
-      //  if(keys[40]) {
-      //    barman.movDown();
-      //    beer.movDown(barman);
-      //   }
-     }
-     if (keys[37]) {
+    checkControls();
+  },150);
 
-     }
-   },100);
+});
 
-   create();
+function nextBeer (beer){
+    setTimeout(function(){
+    beer.DrawBeer();
+  },3000);
+}
 
+// function generateClient(){
+//   var top = [0,150,300];
+//   var left = [0,75,150,225];
+//   var ramdomTop = Math.floor((Math.random() * 3));
+//   var ramdomLeft = Math.floor((Math.random() * 4));
+//   var result = Math.floor((Math.random() * 12));
+//   client = new Client("<div class='client'></div>");
+//   console.log(client);
+// }
+
+function checkControls (){
+  if (keys[38]) {
+    barman.movUp();
+    if ( barman.service == true){beer0.movUp();}
+  }
+  if(keys[40]) {
+     barman.movDown();
+     if ( barman.service == true){beer0.movDown();}
+   }
+   if (keys[39]) {
+     barman.collect(beer0);
+   }
+   if (keys[37]) {
+
+   }
+}
+
+$(document).on('keydown', function(e){
+  keys[e.keyCode] = true;
+  }).keyup(function(e){
+  delete keys[e.keyCode];
 });

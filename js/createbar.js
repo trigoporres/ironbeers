@@ -1,7 +1,7 @@
-function create (){
+function createHTML (){
    $(".container").append("<div id='bar'></div>");
    $("#bar").append("<div id='barra'></div>");
-  
+
 
 
    $("#bar").append("<div id='barman'></div>");

@@ -1,4 +1,5 @@
 function Barman (){
+  this.position=
   this.y = 0;
   this.size = 75;
   this.service = false;
@@ -26,7 +27,6 @@ Barman.prototype.collect = function (a){
   var beerOne = 75;
   var beerTwo = 225;
   var beerThree = 375;
-  //console.log(this.y);
   if (this.y == beerOne) {
     a.x = 375 - 75;
     $("#beer0").css('left', a.x);
@@ -41,6 +41,7 @@ Barman.prototype.collect = function (a){
     a.x = 375 - 75;
     $("#beer2").css('left', a.x);
   }
+  this.service= true;
 };
 
 Barman.prototype.throw = function (){

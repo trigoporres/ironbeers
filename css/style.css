@@ -2,14 +2,19 @@
   height: 450px;
   width: 450px;
   background-color: #c4c5d0;
-  /*margin: 0 auto;*/
+  border-radius: 20px;
+}
+
+#init{
+  float: right;
 }
 
 #barra{
   height: 100%;
   width: 16.6666%;
-  background-color: #1d33d7;
+  background-color: #d7a91d;
   float: right;
+  border-radius: 20px 0 0 20px;
 }
 
 .beer{
@@ -17,7 +22,7 @@
   width: 75px;
   background-image: url('../descarga.jpg');
   z-index: 100000000;
-  /*border-radius: 50%;*/
+  border-radius: 50%;
 }
 
 .beer img{
@@ -27,18 +32,21 @@
 #beer0{
   position: absolute;
   top: 75px;
+  left: 375px;
   visibility: visible;
 }
 
 #beer1{
   position: absolute;
   top: 225px;
+  left: 375px;
   visibility: visible;
 }
 
 #beer2{
   position: absolute;
   top: 375px;
+  left: 375px;
   visibility: visible;
 }
 
@@ -59,6 +67,7 @@
   height: 75px;
   width: 300px;
   background-color: red;
+  border-radius: 20px;
   z-index: 100000;
 }
 
@@ -83,6 +92,8 @@
   background-color: #0c32f6;
   float: left;
   position: absolute;
+  border-radius: 20px;
+  border: 1px solid green;
 }
 
 .uno, .dos, .tres, .cuatro{

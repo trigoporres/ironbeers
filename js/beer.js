@@ -3,7 +3,7 @@ function Beer(position, identifier) {
   this.identifier = identifier;
   this.arrival = 3000;
   this.positionBeer = 0;
-  this.x = 0;
+  this.y = 0;
   this.file = 0;
 }
 
@@ -18,16 +18,20 @@ Beer.prototype.push = function (){
 
 };
 
+Beer.prototype.update = function(){
+  $(this.identifier).css({
+    'top': this.y,
+    'left':this.x
+  });
+};
 
 Beer.prototype.movUp = function () {
-    var top = parseInt($(this.identifier).css('top'));
-     top -= 75;
-    $(this.identifier).css('top', top + 'px');
+  this.y -= 75;
+  this.update();
 };
 
 
 Beer.prototype.movDown = function () {
-    var down = parseInt($(this.identifier).css('top'));
-    top += 75;
-    $(this.identifier).css('top', down + 'px');
-  };
+  this.y += 75;
+  this.update();
+};

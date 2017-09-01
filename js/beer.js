@@ -15,6 +15,7 @@ Beer.prototype.update = function(barman){
   });
 };
 
+
 Beer.prototype.throw = function (){
   positionT = parseInt($(this.identifier).css('left'));
   if (positionT > 0) {

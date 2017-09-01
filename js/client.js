@@ -1,4 +1,5 @@
 function Client(position) {
+<<<<<<< HEAD
 
   this.client = {
     row: position[0],
@@ -6,12 +7,15 @@ function Client(position) {
   };
   this.llegada = false;
   this.size = 75;
+=======
+  this.position =position;
+  this.appears = false;
+>>>>>>> dev
   this.arrival = 3000;
   this.wait = 0;
-  this.timeDrink = 0;
-  //this.drink = true;
 }
 
+<<<<<<< HEAD
 
 
 Client.prototype.push = function (){
@@ -26,4 +30,9 @@ Client.prototype.push = function (){
 
 Client.prototype.exit = function (){
 
+=======
+Client.prototype.drawClient= function (){
+  $("#bar").append(this.position);
+  this.appears= true;
+>>>>>>> dev
 };

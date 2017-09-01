@@ -1,24 +1,25 @@
 function Beer(position, identifier) {
   this.position = position;
   this.identifier = identifier;
-  this.inProcess = false ;
-
+  this.inProcess = false;
 }
 
-// Beer.prototype.ramdomBeer = function(){
-//   return Math.floor((Math.random() * 3));
-// };
 Beer.prototype.DrawBeer= function (){
   $("#barra").append(this.position);
-};
-
-Beer.prototype.push = function (){
-
 };
 
 Beer.prototype.update = function(barman){
   $(this.identifier).css({
     'top': barman.y,
-    'left':this.identifier
+    'left':this.position
   });
+};
+
+Beer.prototype.throw = function (){
+  positionT = parseInt($(this.identifier).css('left'));
+  if (positionT > 0) {
+    positionT = positionT - 10;
+  }
+  $(this.identifier).css('left', positionT);
+  this.service= false;
 };

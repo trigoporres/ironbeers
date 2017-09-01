@@ -12,7 +12,6 @@ $(document).ready(function() {
     var impactClient = ($(".beer").collision(".client"));
     if (impactClient[0]) {
       $(impactClient).css('visibility', 'hidden');
-      // $(".beer").remove();
     }
   }
   var top = [0, 150, 300];
@@ -27,7 +26,6 @@ $(document).ready(function() {
   console.log(clients);
 
   for (var b = 0; b < 3; b++) {
-    console.log("entro");
     beers.push(new Beer("<div id= 'beer"+b+"' class='beer'></div>", "#beer"+b));
 
   }
@@ -39,11 +37,6 @@ $(document).ready(function() {
     nextBeer(beers);
   }
 
-
-
-
-
-
   setInterval(function (){
     var i = Math.floor(Math.random() * 12);
     clients[i].drawClient();
@@ -52,8 +45,14 @@ $(document).ready(function() {
 
   setInterval(function() {
     checkControls();
-    if (beers.inProcess == true) {
-      barman.throw();
+    if (beers[0].inProcess == true) {
+      beers[0].throw();
+    }
+    if (beers[1].inProcess == true) {
+      beers[1].throw();
+    }
+    if (beers[2].inProcess == true) {
+      beers[2].throw();
     }
   }, 150);
 });
@@ -68,7 +67,19 @@ function checkControls() {
   if (keys[38]) {
     barman.movUp();
     if (barman.service == true) {
-      beers[0].update(barman);
+      //beers[0].update(barman);
+      switch (barman.y) {
+        case 75:
+          beers[0].update(barman);
+          break;
+        case 225:
+          beers[1].update(barman);
+          break;
+        case 375:
+          beers[2].update(barman);
+          break;
+        default:
+      }
     }
   }
   if (keys[40]) {
@@ -95,20 +106,26 @@ function checkControls() {
   if (keys[37]) {
     switch (barman.y) {
       case 75:
-      if (barman.service == true) {
-          barman.throw(beers[0]);
-      }
+        beers[0].throw();
+        barman.service=false;
+        beers[0].inProcess = true;
+
       break;
       case 225:
-        barman.throw(beers[1]);
+        beers[1].throw();
+        barman.service=false;
+        beers[1].inProcess = true;
+
         break;
       case 375:
-        barman.throw(beers[2]);
+        beers[2].throw();
+        barman.service=false;
+        beers[2].inProcess = true;
+
         break;
       default:
       console.log("Error no lanzaste nada");
     }
-    beers.inProcess = true;
 
   }
 }

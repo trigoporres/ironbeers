@@ -29,7 +29,6 @@ Beer.prototype.beerCollision = function() {
   var impactBeer = ($(".client").collision(this.identifier));
   if (impactClient[0] && impactBeer[0]) {
     $(impactClient).css('visibility', 'hidden');
-  $(this.identifier).remove();
   }
 
 };

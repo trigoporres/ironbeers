@@ -7,55 +7,25 @@ var count;
 
 $(document).ready(function() {
   createHTML();
-
-  function beerCollision() {
-    var impactClient = ($(".beer").collision(".client"));
-    if (impactClient[0]) {
-      $(impactClient).css('visibility', 'hidden');
-    }
-  }
-  var top = [0, 150, 300];
-  var left = [0, 75, 150, 225];
-
-
-  for (var i = 0; i < 3; i++) {
-    for (var j = 0; j < 4; j++) {
-    clients.push(new Client("<div class='client' style= 'top:" + top[i] + "px;left:" +left[j] + "px'></div>"));
-    }
-  }
-  console.log(clients);
-
-  for (var b = 0; b < 3; b++) {
-    beers.push(new Beer("<div id= 'beer"+b+"' class='beer'></div>", "#beer"+b));
-
-  }
-  console.log(beers);
-
+  generateClients();
+  generateBeers ();
   barman = new Barman(0);
+  nextBeer(beers);
 
-  for (var w = 0; w < 3; w++) {
-    nextBeer(beers);
-  }
 
   setInterval(function (){
     var i = Math.floor(Math.random() * 12);
     clients[i].drawClient();
-    beerCollision();
   },2000);
 
   setInterval(function() {
     checkControls();
-    if (beers[0].inProcess == true) {
-      beers[0].throw();
-    }
-    if (beers[1].inProcess == true) {
-      beers[1].throw();
-    }
-    if (beers[2].inProcess == true) {
-      beers[2].throw();
-    }
+    checkBeersStatus();
   }, 150);
+
 });
+
+//Funciones extras generadoras
 
 function nextBeer(beers) {
     for (var i = 0; i < 3; i++) {
@@ -66,26 +36,14 @@ function nextBeer(beers) {
 function checkControls() {
   if (keys[38]) {
     barman.movUp();
-    if (barman.service == true) {
-      //beers[0].update(barman);
-      switch (barman.y) {
-        case 75:
-          beers[0].update(barman);
-          break;
-        case 225:
-          beers[1].update(barman);
-          break;
-        case 375:
-          beers[2].update(barman);
-          break;
-        default:
-      }
+    if (barman.service == true && beers[2]) {
+      beers[2].update(barman);
     }
   }
   if (keys[40]) {
     barman.movDown();
-    if (barman.service == true) {
-      beers[0].update(barman);
+    if (barman.service == true && beers[2]) {
+      beers[2].update(barman);
     }
   }
   if (keys[39]) {
@@ -127,6 +85,37 @@ function checkControls() {
       console.log("Error no lanzaste nada");
     }
 
+  }
+}
+
+function checkBeersStatus(){
+  if (beers[0].inProcess == true) {
+    beers[0].throw();
+    beers[0].beerCollision();
+  }
+  if (beers[1].inProcess == true) {
+    beers[1].throw();
+    beers[1].beerCollision();
+  }
+  if (beers[2].inProcess == true) {
+    beers[2].throw();
+    beers[2].beerCollision();
+  }
+}
+
+function generateClients (){
+  var top = [0, 150, 300];
+  var left = [0, 75, 150, 225];
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 4; j++) {
+    clients.push(new Client("<div class='client' style= 'top:" + top[i] + "px;left:" +left[j] + "px'></div>"));
+    }
+  }
+}
+
+function generateBeers(){
+  for (var b = 0; b < 3; b++) {
+    beers.push(new Beer("<div id= 'beer"+b+"' class='beer'></div>", "#beer"+b));
   }
 }
 

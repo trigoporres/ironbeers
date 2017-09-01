@@ -23,3 +23,12 @@ Beer.prototype.throw = function (){
   $(this.identifier).css('left', positionT);
   this.service= false;
 };
+Beer.prototype.beerCollision = function() {
+  var impactClient = ($(this.identifier).collision(".client"));
+  var impactBeer = ($(".client").collision(this.identifier));
+  if (impactClient[0] && impactBeer[0]) {
+    $(impactClient).css('visibility', 'hidden');
+  $(this.identifier).remove();
+  }
+
+};

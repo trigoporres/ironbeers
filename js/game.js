@@ -105,7 +105,6 @@ function checkBeersStatus(){
 
 function generateClients (){
   var top = [0, 150, 300];
-  
   var left = [0, 75, 150, 225];
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 4; j++) {
